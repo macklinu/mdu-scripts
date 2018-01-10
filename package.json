@@ -1,0 +1,25 @@
+{
+  "name": "mdu-scripts",
+  "version": "0.0.0-development",
+  "main": "index.js",
+  "bin": "bin/index.js",
+  "repository": "https://github.com/macklinu/mdu-scripts",
+  "author": "macklinu@gmail.com",
+  "license": "MIT",
+  "engine": {
+    "node": ">=8"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "common-tags": "^1.7.1",
+    "yargs": "^10.1.1"
+  },
+  "devDependencies": {
+    "execa": "^0.8.0",
+    "jest": "^22.0.5",
+    "prettier": "^1.10.1"
+  }
+}
