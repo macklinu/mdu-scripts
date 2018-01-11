@@ -10,6 +10,7 @@
     "node": ">=8"
   },
   "scripts": {
+    "precommit": "lint-staged",
     "test": "jest"
   },
   "dependencies": {
@@ -19,7 +20,9 @@
   },
   "devDependencies": {
     "execa": "^0.8.0",
+    "husky": "^0.14.3",
     "jest": "^22.0.5",
-    "prettier": "^1.10.1"
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.10.2"
   }
 }
