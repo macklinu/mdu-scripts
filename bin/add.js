@@ -13,6 +13,7 @@ let pathMap = {
   editorconfig: filePath('.editorconfig'),
   prettier: filePath('prettier.config.js'),
   gitignore: filePath('.gitignore'),
+  'lint-staged': filePath('lint-staged.config.js'),
 }
 
 let options = () => {

@@ -13,10 +13,10 @@ There is a lot of repetition when setting up JavaScript codebases, especially in
 Right now, this is just a CLI that can be run with [`npx`](https://github.com/zkat/npx) to add configuration files to your current directory. For example, executing:
 
 ```sh
-$ npx mdu-scripts add prettier editorconfig gitignore
+$ npx mdu-scripts add prettier editorconfig gitignore lint-staged
 ```
 
-Will add a `prettier.config.js`, `.editorconfig`, and `.gitignore` file to your current working directory.
+Will add a `prettier.config.js`, `.editorconfig`, `.gitignore`, and `lint-staged.config.js` file to your current working directory.
 
 More to come!
 
