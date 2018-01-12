@@ -1,14 +1,26 @@
 let os = require('os')
 let execa = require('execa')
 let path = require('path')
+let { createTmpProject, deleteTmpProject } = require('./helpers')
 
-let bin = path.resolve(__dirname, '../', 'bin')
+let bin = path.resolve(__dirname, '../', 'index.js')
 
 let run = (command = '') => {
   return execa.shell(`node ${bin} ${command}`.trim(), {
-    cwd: os.tmpdir(),
+    cwd: project,
   })
 }
+
+let project
+
+beforeEach(() => {
+  project = createTmpProject()
+})
+
+afterEach(() => {
+  deleteTmpProject(project)
+  project = null
+})
 
 describe('command: add', () => {
   test('writes files', () => {

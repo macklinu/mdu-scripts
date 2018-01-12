@@ -1,5 +1,3 @@
-module.exports = {
-  semi: false,
-  singleQuote: true,
-  trailingComma: 'es5',
-}
+let { prettier } = require('./src/config')
+
+module.exports = prettier

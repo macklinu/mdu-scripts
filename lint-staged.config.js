@@ -1,3 +1,3 @@
-module.exports = {
-  '*.{json,js,ts,tsx}': ['prettier --write', 'git add'],
-}
+let { lintStaged } = require('./src/config')
+
+module.exports = lintStaged
