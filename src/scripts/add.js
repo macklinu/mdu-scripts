@@ -2,12 +2,13 @@ let path = require('path')
 let fs = require('fs')
 let util = require('util')
 let chalk = require('chalk')
-let { stripIndent } = require('common-tags')
+let { stripIndents } = require('common-tags')
+let { isHelp } = require('../utils')
 
 let readFile = util.promisify(fs.readFile)
 let writeFile = util.promisify(fs.writeFile)
 
-let filePath = filename => path.resolve(__dirname, '../', 'files', filename)
+let filePath = filename => path.resolve(__dirname, '../', 'config', filename)
 
 let pathMap = {
   editorconfig: filePath('.editorconfig'),
@@ -22,17 +23,26 @@ let options = () => {
     .join('\n')
 }
 
-exports.command = 'add [files...]'
+let args = process.argv.slice(2) || []
 
-exports.desc = stripIndent`
-  Writes config files to the current directory for given file types. Possible options are:
+if (isHelp(args[0])) {
+  printHelp()
+} else {
+  runScript(args)
+}
 
-  ${options()}
-`
+function printHelp() {
+  let helpMessage = stripIndents`
+    add [files...]
 
-exports.builder = yargs => yargs.default('files', [])
+    Writes config files to the current directory for given file types. Possible options are:
 
-exports.handler = ({ files }) => {
+    ${options()}
+  `
+  console.log(helpMessage)
+}
+
+function runScript(files) {
   if (files.length === 0) {
     console.error(`Please supply at least one valid option:\n\n${options()}`)
     process.exit(1)
