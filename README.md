@@ -4,6 +4,8 @@
 <p>CLI toolbox for common scripts for my projects</p>
 </div>
 
+[![Build Status](https://travis-ci.org/macklinu/mdu-scripts.svg?branch=master)](https://travis-ci.org/macklinu/mdu-scripts)
+
 ## Motivation
 
 There is a lot of repetition when setting up JavaScript codebases, especially in adding configs. The goal of this is to abstract managing configurations and adding config files to projects.
