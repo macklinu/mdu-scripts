@@ -5,7 +5,7 @@
   "repository": "https://github.com/macklinu/mdu-scripts",
   "author": "macklinu@gmail.com",
   "license": "MIT",
-  "files": ["bin", "files"],
+  "files": ["src"],
   "engine": {
     "node": ">=8"
   },
