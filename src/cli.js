@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-let path = require('path')
-let glob = require('glob')
-let execa = require('execa')
-let { stripIndents } = require('common-tags')
-let { isHelp } = require('./utils')
+const path = require('path')
+const glob = require('glob')
+const execa = require('execa')
+const { stripIndents } = require('common-tags')
+const { isHelp } = require('./utils')
 
-let [executor, ignoredBin, script, ...args] = process.argv
+const [executor, ignoredBin, script, ...args] = process.argv
 
 if (!script || isHelp(script)) {
   printHelp()
@@ -15,9 +15,9 @@ if (!script || isHelp(script)) {
 }
 
 function printHelp() {
-  let scriptsPath = path.join(__dirname, 'scripts/')
-  let scriptsAvailable = glob.sync(path.join(__dirname, 'scripts', '*'))
-  let scriptsAvailableMessage = scriptsAvailable
+  const scriptsPath = path.join(__dirname, 'scripts/')
+  const scriptsAvailable = glob.sync(path.join(__dirname, 'scripts', '*'))
+  const scriptsAvailableMessage = scriptsAvailable
     .map(path.normalize)
     .map(s =>
       s
@@ -29,7 +29,7 @@ function printHelp() {
     .map(s => `- ${s}`)
     .join('\n')
 
-  let fullMessage = stripIndents`
+  const fullMessage = stripIndents`
     Usage: ${ignoredBin} [script] [--flags]
 
     Available Scripts:
@@ -42,8 +42,8 @@ function printHelp() {
 }
 
 function runScript() {
-  let relativeScriptPath = path.join(__dirname, './scripts', script)
-  let scriptPath = attemptResolve(relativeScriptPath)
+  const relativeScriptPath = path.join(__dirname, './scripts', script)
+  const scriptPath = attemptResolve(relativeScriptPath)
 
   if (!scriptPath) {
     throw new Error(`Unknown script "${script}".`)

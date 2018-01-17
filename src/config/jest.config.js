@@ -1,4 +1,4 @@
-let ignores = [
+const ignores = [
   '/node_modules/',
   '/fixtures/',
   '/__tests__/helpers/',

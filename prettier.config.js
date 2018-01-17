@@ -1,3 +1,3 @@
-let { prettier } = require('./src')
+const { prettier } = require('./src')
 
 module.exports = prettier

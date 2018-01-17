@@ -1,37 +1,37 @@
-let path = require('path')
-let execa = require('execa')
-let yargsParser = require('yargs-parser')
-let { hasPkgProp, resolveBin, hasFile } = require('../utils')
+const path = require('path')
+const execa = require('execa')
+const yargsParser = require('yargs-parser')
+const { hasPkgProp, resolveBin, hasFile } = require('../utils')
 
 let args = process.argv.slice(2)
-let here = p => path.join(__dirname, p)
-let hereRelative = p => here(p).replace(process.cwd(), '.')
-let parsedArgs = yargsParser(args)
+const here = p => path.join(__dirname, p)
+const hereRelative = p => here(p).replace(process.cwd(), '.')
+const parsedArgs = yargsParser(args)
 
-let useBuiltinConfig =
+const useBuiltinConfig =
   !args.includes('--config') &&
   !hasFile('.eslintrc') &&
   !hasFile('.eslintrc.js') &&
   !hasPkgProp('eslintConfig')
 
-let config = useBuiltinConfig
+const config = useBuiltinConfig
   ? ['--config', hereRelative('../config/.eslintrc.js')]
   : []
 
-let useBuiltinIgnore =
+const useBuiltinIgnore =
   !args.includes('--ignore-path') &&
   !hasFile('.eslintignore') &&
   !hasPkgProp('eslintIgnore')
 
-let ignore = useBuiltinIgnore
+const ignore = useBuiltinIgnore
   ? ['--ignore-path', hereRelative('../config/.eslintignore')]
   : []
 
-let cache = args.includes('--no-cache') ? [] : ['--cache']
+const cache = args.includes('--no-cache') ? [] : ['--cache']
 
-let filesGiven = parsedArgs._.length > 0
+const filesGiven = parsedArgs._.length > 0
 
-let filesToApply = filesGiven ? [] : ['.']
+const filesToApply = filesGiven ? [] : ['.']
 
 if (filesGiven) {
   // we need to take all the flag-less arguments (the files that should be linted)
