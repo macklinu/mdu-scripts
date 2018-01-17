@@ -1,3 +1,5 @@
+jest.unmock('execa')
+
 const execa = require('execa')
 const path = require('path')
 const { createTmpProject, deleteTmpProject } = require('./helpers')
