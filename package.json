@@ -13,6 +13,7 @@
   "scripts": {
     "precommit": "lint-staged",
     "test": "node src/cli test",
+    "lint": "node src/cli lint",
     "travis-deploy-once": "travis-deploy-once",
     "semantic-release": "semantic-release"
   },
@@ -28,7 +29,9 @@
     "is-ci": "^1.1.0",
     "jest": "^22.0.5",
     "lodash.has": "^4.5.2",
-    "read-pkg-up": "^3.0.0"
+    "read-pkg-up": "^3.0.0",
+    "which": "^1.3.0",
+    "yargs-parser": "^8.1.0"
   },
   "devDependencies": {
     "cz-conventional-changelog": "^2.1.0",
