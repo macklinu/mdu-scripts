@@ -1,10 +1,10 @@
-let execa = require('execa')
-let path = require('path')
-let { createTmpProject, deleteTmpProject } = require('./helpers')
+const execa = require('execa')
+const path = require('path')
+const { createTmpProject, deleteTmpProject } = require('./helpers')
 
-let bin = path.resolve(__dirname, '../../', 'cli.js')
+const bin = path.resolve(__dirname, '../../', 'cli.js')
 
-let run = (command = '') => {
+const run = (command = '') => {
   return execa.shell(`node ${bin} ${command}`.trim(), {
     cwd: project,
   })

@@ -1,21 +1,21 @@
-let fs = require('fs')
-let path = require('path')
-let arrify = require('arrify')
-let has = require('lodash.has')
-let readPkgUp = require('read-pkg-up')
-let which = require('which')
+const fs = require('fs')
+const path = require('path')
+const arrify = require('arrify')
+const has = require('lodash.has')
+const readPkgUp = require('read-pkg-up')
+const which = require('which')
 
-let { pkg, path: pkgPath } = readPkgUp.sync({
+const { pkg, path: pkgPath } = readPkgUp.sync({
   cwd: fs.realpathSync(process.cwd()),
 })
-let appDirectory = path.dirname(pkgPath)
+const appDirectory = path.dirname(pkgPath)
 
-let fromRoot = (...p) => path.join(appDirectory, ...p)
-let hasFile = (...p) => fs.existsSync(fromRoot(...p))
+const fromRoot = (...p) => path.join(appDirectory, ...p)
+const hasFile = (...p) => fs.existsSync(fromRoot(...p))
 
-let hasPkgProp = props => arrify(props).some(prop => has(pkg, prop))
+const hasPkgProp = props => arrify(props).some(prop => has(pkg, prop))
 
-let isHelp = arg => arg === '--help' || arg === '-h'
+const isHelp = arg => arg === '--help' || arg === '-h'
 
 function resolveBin(
   modName,
