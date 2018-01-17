@@ -6,10 +6,12 @@ module.exports = {
   },
   env: {
     'jest/globals': true,
+    es6: true,
     browser: true,
     node: true,
   },
   rules: {
+    'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     'prefer-const': 'error',
     'jest/no-disabled-tests': 'warn',
     'jest/no-focused-tests': 'error',
