@@ -6,6 +6,8 @@ module.exports = {
   },
   env: {
     'jest/globals': true,
+    browser: true,
+    node: true,
   },
   rules: {
     'prefer-const': 'error',
