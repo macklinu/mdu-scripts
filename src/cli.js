@@ -4,6 +4,7 @@ let path = require('path')
 let glob = require('glob')
 let execa = require('execa')
 let { stripIndents } = require('common-tags')
+let { isHelp } = require('./utils')
 
 let [executor, ignoredBin, script, ...args] = process.argv
 
@@ -11,10 +12,6 @@ if (!script || isHelp(script)) {
   printHelp()
 } else {
   runScript()
-}
-
-function isHelp(script) {
-  return script === '--help' || script == '-h'
 }
 
 function printHelp() {
