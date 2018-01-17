@@ -4,6 +4,9 @@
   "main": "src/index.js",
   "bin": "src/cli.js",
   "repository": "https://github.com/macklinu/mdu-scripts",
+  "bugs": {
+    "url": "https://github.com/macklinu/mdu-scripts/issues"
+  },
   "author": "Macklin Underdown <macklinu@gmail.com>",
   "license": "MIT",
   "files": ["src"],
