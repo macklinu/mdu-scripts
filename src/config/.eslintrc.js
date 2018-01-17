@@ -1,6 +1,9 @@
 module.exports = {
   extends: ['prettier', 'prettier/react'],
   plugins: ['jest'],
+  parserOptions: {
+    ecmaVersion: 8,
+  },
   env: {
     'jest/globals': true,
   },
