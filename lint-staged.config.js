@@ -1,3 +1,3 @@
-let { lintStaged } = require('./src/config')
+let { lintStaged } = require('./src')
 
 module.exports = lintStaged
