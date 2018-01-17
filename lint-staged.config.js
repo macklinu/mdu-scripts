@@ -1,3 +1,1 @@
-const { lintStaged } = require('./src')
-
-module.exports = lintStaged
+module.exports = require('./src').lintStaged
