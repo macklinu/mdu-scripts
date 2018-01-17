@@ -7,8 +7,6 @@ const {
 expect.addSnapshotSerializer(unquoteSerializer)
 expect.addSnapshotSerializer(winPathSerializer)
 
-jest.mock('jest', () => ({ run: jest.fn() }))
-
 cases(
   'lint',
   ({
