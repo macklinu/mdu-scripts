@@ -1,5 +1,6 @@
 {
   "name": "mdu-scripts",
+  "description": "CLI toolbox for common scripts for my projects",
   "version": "0.0.0-development",
   "main": "src/index.js",
   "bin": "src/cli.js",
