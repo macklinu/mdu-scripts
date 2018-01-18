@@ -1,1 +1,1 @@
-module.exports = require('execa-jest-mock')
+module.exports = jest.fn(() => Promise.resolve({ status: 0 }))
