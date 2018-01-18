@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`build calls babel with default args 1`] = `babel --out-dir dist --copy-files --ignore __tests__,__mocks__,**/*.test.js --presets PROJECT_ROOT/src/config/babelrc.js src`;
+
+exports[`build honors --no-copy-files 1`] = `babel --out-dir dist --ignore __tests__,__mocks__,**/*.test.js --presets PROJECT_ROOT/src/config/babelrc.js src --no-copy-files`;
+
+exports[`build honors custom config 1`] = `babel --out-dir dist --copy-files --ignore __tests__,__mocks__,**/*.test.js --presets PROJECT_ROOT/src/config/babelrc.js src --config ./my-config.js`;
+
+exports[`build honors custom ignore 1`] = `babel --out-dir dist --copy-files --presets PROJECT_ROOT/src/config/babelrc.js src --ignore __someDir__`;
+
+exports[`build honors custom out dir 1`] = `babel --copy-files --ignore __tests__,__mocks__,**/*.test.js --presets PROJECT_ROOT/src/config/babelrc.js src --out-dir destination`;
