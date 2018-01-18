@@ -2,7 +2,7 @@
 
 > CLI toolbox for common scripts for my projects
 
-[![npm](https://img.shields.io/npm/v/mdu-scripts.svg?style=flat-square)](https://npm.im/mdu-scripts)
+[![npm](https://img.shields.io/npm/v/mdu-scripts.svg)](https://npm.im/mdu-scripts)
 [![Build Status](https://travis-ci.org/macklinu/mdu-scripts.svg?branch=master)](https://travis-ci.org/macklinu/mdu-scripts)
 [![license](https://img.shields.io/github/license/macklinu/mdu-scripts.svg)](https://github.com/macklinu/mdu-scripts/blob/master/LICENSE)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
