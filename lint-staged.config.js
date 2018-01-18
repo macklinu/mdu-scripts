@@ -1,1 +1,3 @@
-module.exports = require('./src').lintStaged
+module.exports = {
+  '*.{json,js,ts,tsx}': ['node src/cli format --write', 'git add'],
+}
