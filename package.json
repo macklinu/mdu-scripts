@@ -8,6 +8,7 @@
   "bugs": {
     "url": "https://github.com/macklinu/mdu-scripts/issues"
   },
+  "homepage": "https://github.com/macklinu/mdu-scripts#readme",
   "author": "Macklin Underdown <macklinu@gmail.com>",
   "license": "MIT",
   "files": ["src"],
