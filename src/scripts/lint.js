@@ -15,7 +15,7 @@ const useBuiltinConfig =
   !hasPkgProp('eslintConfig')
 
 const config = useBuiltinConfig
-  ? ['--config', hereRelative('../config/.eslintrc.js')]
+  ? ['--config', hereRelative('../config/eslintrc.js')]
   : []
 
 const useBuiltinIgnore =
@@ -24,7 +24,7 @@ const useBuiltinIgnore =
   !hasPkgProp('eslintIgnore')
 
 const ignore = useBuiltinIgnore
-  ? ['--ignore-path', hereRelative('../config/.eslintignore')]
+  ? ['--ignore-path', hereRelative('../config/eslintignore')]
   : []
 
 const cache = args.includes('--no-cache') ? [] : ['--cache']

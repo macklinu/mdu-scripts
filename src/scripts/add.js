@@ -13,10 +13,22 @@ const writeFile = util.promisify(fs.writeFile)
 const filePath = filename => path.resolve(__dirname, '../', 'config', filename)
 
 const pathMap = {
-  editorconfig: filePath('.editorconfig'),
-  prettier: filePath('prettier.config.js'),
-  gitignore: filePath('.gitignore'),
-  'lint-staged': filePath('lint-staged.config.js'),
+  editorconfig: {
+    templatePath: filePath('editorconfig'),
+    outputName: '.editorconfig',
+  },
+  prettier: {
+    templatePath: filePath('prettier.config.js'),
+    outputName: 'prettier.config.js',
+  },
+  gitignore: {
+    templatePath: filePath('gitignore'),
+    outputName: '.gitignore',
+  },
+  'lint-staged': {
+    templatePath: filePath('lint-staged.config.js'),
+    outputName: 'lint-staged.config.js',
+  },
 }
 
 const options = () => {
@@ -60,10 +72,9 @@ function runScript(files) {
       .filter(Boolean)
 
     return Promise.all(
-      filePaths.map(async fp => {
-        const { base } = path.parse(fp)
-        const file = await readFile(fp, 'utf8')
-        const newPath = path.resolve(process.cwd(), base)
+      filePaths.map(async ({ templatePath, outputName }) => {
+        const file = await readFile(templatePath, 'utf8')
+        const newPath = path.resolve(process.cwd(), outputName)
         console.log(chalk.green(`Wrote file ${chalk.bold(newPath)}`))
         return await writeFile(newPath, file, 'utf8')
       })

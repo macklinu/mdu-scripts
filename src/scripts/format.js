@@ -21,7 +21,7 @@ const config = useBuiltinConfig
 const useBuiltinIgnore =
   !args.includes('--ignore-path') && !hasFile('.prettierignore')
 const ignore = useBuiltinIgnore
-  ? ['--ignore-path', hereRelative('../config/.prettierignore')]
+  ? ['--ignore-path', hereRelative('../config/prettierignore')]
   : []
 
 const write = args.includes('--no-write') ? [] : ['--write']
