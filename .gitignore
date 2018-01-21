@@ -62,3 +62,6 @@ typings/
 
 # Build output
 dist/
+
+# Output directory when unzipping `npm pack`
+package/

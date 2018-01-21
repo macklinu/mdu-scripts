@@ -2,8 +2,8 @@
   "name": "mdu-scripts",
   "description": "CLI toolbox for common scripts for my projects",
   "version": "0.0.0-development",
-  "main": "src/index.js",
-  "bin": "src/cli.js",
+  "main": "dist/index.js",
+  "bin": "dist/cli.js",
   "repository": "https://github.com/macklinu/mdu-scripts",
   "bugs": {
     "url": "https://github.com/macklinu/mdu-scripts/issues"
@@ -11,15 +11,17 @@
   "homepage": "https://github.com/macklinu/mdu-scripts#readme",
   "author": "Macklin Underdown <macklinu@gmail.com>",
   "license": "MIT",
-  "files": ["src"],
+  "files": ["dist"],
   "engine": {
     "node": ">=8"
   },
   "scripts": {
     "precommit": "lint-staged",
+    "build": "node src/cli build",
     "test": "node src/cli test",
     "lint": "node src/cli lint",
     "travis-deploy-once": "travis-deploy-once",
+    "prepublish": "npm run build",
     "semantic-release": "semantic-release"
   },
   "dependencies": {
