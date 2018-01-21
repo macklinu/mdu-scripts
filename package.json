@@ -11,7 +11,7 @@
   "homepage": "https://github.com/macklinu/mdu-scripts#readme",
   "author": "Macklin Underdown <macklinu@gmail.com>",
   "license": "MIT",
-  "files": ["dist"],
+  "files": ["dist", "babel.js", "eslint.js", "jest.js", "prettier.js"],
   "engine": {
     "node": ">=8"
   },
