@@ -12,7 +12,13 @@ const winPathSerializer = {
   test: val => typeof val === 'string' && val.includes('\\'),
 }
 
+const projectRootSerializer = {
+  print: val => val.replace(process.cwd(), 'PROJECT_ROOT'),
+  test: val => typeof val === 'string',
+}
+
 module.exports = {
   unquoteSerializer,
   winPathSerializer,
+  projectRootSerializer,
 }

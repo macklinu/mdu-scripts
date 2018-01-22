@@ -2,14 +2,12 @@ const cases = require('jest-in-case')
 const {
   unquoteSerializer,
   winPathSerializer,
+  projectRootSerializer,
 } = require('./helpers/serializers')
 
 expect.addSnapshotSerializer(unquoteSerializer)
 expect.addSnapshotSerializer(winPathSerializer)
-expect.addSnapshotSerializer({
-  print: val => val.replace(process.cwd(), 'PROJECT_ROOT'),
-  test: val => typeof val === 'string',
-})
+expect.addSnapshotSerializer(projectRootSerializer)
 
 jest.mock('rimraf', () => ({
   sync: () => {},

@@ -45,6 +45,13 @@ function resolveBin(
   }
 }
 
+function resolveMduScripts() {
+  if (pkg.name === 'mdu-scripts') {
+    return require.resolve('./cli').replace(process.cwd(), '.')
+  }
+  return resolveBin('mdu-scripts')
+}
+
 module.exports = {
   appDirectory,
   fromRoot,
@@ -53,4 +60,5 @@ module.exports = {
   pkg,
   isHelp,
   resolveBin,
+  resolveMduScripts,
 }

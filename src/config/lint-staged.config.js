@@ -1,3 +1,13 @@
+const { resolveMduScripts } = require('../utils')
+
+const mduScripts = resolveMduScripts()
+
 module.exports = {
-  '*.{json,js,ts,tsx}': ['prettier --write', 'git add'],
+  linters: {
+    '**/*.+(js|json|ts|tsx|less|css)': [
+      `${mduScripts} format`,
+      `${mduScripts} lint`,
+      'git add',
+    ],
+  },
 }

@@ -16,7 +16,7 @@
     "node": ">=8"
   },
   "scripts": {
-    "precommit": "lint-staged",
+    "precommit": "node src/cli precommit",
     "build": "node src/cli build",
     "test": "node src/cli test",
     "lint": "node src/cli lint",
