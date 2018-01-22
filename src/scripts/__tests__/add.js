@@ -25,15 +25,16 @@ afterEach(() => {
 
 describe('command: add', () => {
   test('writes files', () => {
-    return run('add editorconfig prettier gitignore lint-staged').then(
-      ({ stdout, code }) => {
-        expect(code).toBe(0)
-        expect(stdout).toContain('prettier.config.js')
-        expect(stdout).toContain('.editorconfig')
-        expect(stdout).toContain('.gitignore')
-        expect(stdout).toContain('lint-staged.config.js')
-      }
-    )
+    return run(
+      'add editorconfig prettier gitignore lint-staged eslintignore'
+    ).then(({ stdout, code }) => {
+      expect(code).toBe(0)
+      expect(stdout).toContain('prettier.config.js')
+      expect(stdout).toContain('.editorconfig')
+      expect(stdout).toContain('.gitignore')
+      expect(stdout).toContain('lint-staged.config.js')
+      expect(stdout).toContain('.eslintignore')
+    })
   })
 
   test('running add without files should exit with error', () => {

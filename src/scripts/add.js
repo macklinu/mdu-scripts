@@ -29,6 +29,10 @@ const pathMap = {
     templatePath: filePath('lint-staged.config.js'),
     outputName: 'lint-staged.config.js',
   },
+  eslintignore: {
+    templatePath: filePath('eslintignore'),
+    outputName: '.eslintignore',
+  },
 }
 
 const options = () => {
