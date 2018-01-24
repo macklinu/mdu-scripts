@@ -24,6 +24,21 @@ const hasAnyDep = args => [hasDep, hasDevDep, hasPeerDep].some(fn => fn(args))
 
 const isHelp = arg => arg === '--help' || arg === '-h'
 
+function parseEnv(name, def) {
+  if (envIsSet(name)) {
+    return JSON.parse(process.env[name])
+  }
+  return def
+}
+
+function envIsSet(name) {
+  return (
+    process.env.hasOwnProperty(name) &&
+    process.env[name] &&
+    process.env[name] !== 'undefined'
+  )
+}
+
 function resolveBin(
   modName,
   { executable = modName, cwd = process.cwd() } = {}
@@ -62,6 +77,7 @@ function resolveMduScripts() {
 module.exports = {
   appDirectory,
   fromRoot,
+  parseEnv,
   hasFile,
   hasPkgProp,
   hasAnyDep,
