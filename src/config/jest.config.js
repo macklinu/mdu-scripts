@@ -1,5 +1,5 @@
 const path = require('path')
-const { fromRoot, hasFile, hasPkgProp } = require('../utils')
+const { fromRoot, hasFile, hasPkgProp, hasAnyDep } = require('../utils')
 
 const here = p => path.join(__dirname, p)
 const useBuiltInBabelConfig = !hasFile('.babelrc') && !hasPkgProp('babel')
@@ -14,6 +14,7 @@ const ignores = [
 module.exports = Object.assign(
   {
     roots: [fromRoot('src')],
+    testEnvironment: hasAnyDep('react') ? 'jsdom' : 'node',
     testPathIgnorePatterns: [...ignores],
     moduleFileExtensions: ['js', 'jsx', 'json', 'ts', 'tsx'],
     collectCoverageFrom: ['src/**/*.+(js|jsx|ts|tsx)'],
