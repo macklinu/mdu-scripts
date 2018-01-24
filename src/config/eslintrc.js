@@ -1,8 +1,10 @@
 module.exports = {
   extends: ['eslint:recommended', 'prettier', 'prettier/react'],
   plugins: ['jest'],
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 8,
+    sourceType: 'module',
   },
   env: {
     'jest/globals': true,
