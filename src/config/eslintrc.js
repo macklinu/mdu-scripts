@@ -6,13 +6,18 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'prettier',
+    'plugin:import/errors',
+    'plugin:import/warnings',
     usingReact && 'prettier/react',
     usingReact && 'plugin:react/recommended',
     usingReact && 'plugin:jsx-a11y/recommended',
   ].filter(Boolean),
-  plugins: ['jest', usingReact && 'react', usingReact && 'jsx-a11y'].filter(
-    Boolean
-  ),
+  plugins: [
+    'jest',
+    'import',
+    usingReact && 'react',
+    usingReact && 'jsx-a11y',
+  ].filter(Boolean),
   parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 8,
