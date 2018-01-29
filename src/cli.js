@@ -53,6 +53,7 @@ function runScript() {
 
   execa(executor, [scriptPath, ...args], {
     stdio: 'inherit',
+    env: getEnv(),
   })
     .then(({ signal, status }) => {
       if (signal) {
@@ -89,4 +90,18 @@ function attemptResolve(...resolveArgs) {
   } catch (error) {
     return null
   }
+}
+
+function getEnv() {
+  return Object.keys(process.env)
+    .filter(key => process.env[key] !== undefined)
+    .reduce(
+      (env, key) => {
+        env[key] = process.env[key]
+        return env
+      },
+      {
+        [`SCRIPTS_${script.toUpperCase()}`]: true,
+      }
+    )
 }

@@ -6,6 +6,8 @@ exports[`test does not watch --updateSnapshot 1`] = `--config {"builtInConfig":t
 
 exports[`test does not watch on CI 1`] = `--config {"builtInConfig":true}`;
 
+exports[`test does not watch on precommit 1`] = `--config {"builtInConfig":true}`;
+
 exports[`test does not watch with --coverage 1`] = `--config {"builtInConfig":true} --coverage`;
 
 exports[`test does not watch with --no-watch 1`] = `--config {"builtInConfig":true} --no-watch`;

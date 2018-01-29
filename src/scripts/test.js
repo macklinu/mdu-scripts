@@ -2,12 +2,13 @@ process.env.BABEL_ENV = 'test'
 process.env.NODE_ENV = 'test'
 
 const isCI = require('is-ci')
-const { hasPkgProp, hasFile } = require('../utils')
+const { hasPkgProp, hasFile, parseEnv } = require('../utils')
 
 const args = process.argv.slice(2)
 
 const watch =
   !isCI &&
+  !parseEnv('SCRIPTS_PRECOMMIT', false) &&
   !args.includes('--no-watch') &&
   !args.includes('--coverage') &&
   !args.includes('--updateSnapshot')

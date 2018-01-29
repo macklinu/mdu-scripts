@@ -10,6 +10,7 @@ module.exports = {
     '**/*.+(js|json|ts|tsx|less|css|md)': [
       `${mduScripts} format`,
       `${mduScripts} lint`,
+      `${mduScripts} test --findRelatedTests --passWithNoTests`,
       'git add',
     ],
   },

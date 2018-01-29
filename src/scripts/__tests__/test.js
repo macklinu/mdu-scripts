@@ -20,8 +20,10 @@ cases(
     pkgHasJestProp = false,
     hasJestConfigFile = false,
     ci = false,
+    precommit = false,
   }) => {
     // beforeEach
+    process.env.SCRIPTS_PRECOMMIT = precommit
     const { run: jestRunMock } = require('jest')
     mockIsCI = ci
     Object.assign(utils, {
@@ -60,6 +62,9 @@ cases(
     },
     'does not watch --updateSnapshot': {
       args: ['--updateSnapshot'],
+    },
+    'does not watch on precommit': {
+      precommit: true,
     },
     'uses custom config with --config': {
       args: ['--config', './my-config.js'],
