@@ -1,6 +1,7 @@
-const { hasAnyDep } = require('../utils')
+const { hasAnyDep, hasFile } = require('../utils')
 
 const usingReact = hasAnyDep('react')
+const usingFlow = hasAnyDep('flow-bin') || hasFile('.flowconfig')
 
 module.exports = {
   extends: [
@@ -11,12 +12,14 @@ module.exports = {
     usingReact && 'prettier/react',
     usingReact && 'plugin:react/recommended',
     usingReact && 'plugin:jsx-a11y/recommended',
+    usingFlow && 'plugin:flowtype/recommended',
   ].filter(Boolean),
   plugins: [
     'jest',
     'import',
     usingReact && 'react',
     usingReact && 'jsx-a11y',
+    usingFlow && 'flowtype',
   ].filter(Boolean),
   parser: 'babel-eslint',
   parserOptions: {
