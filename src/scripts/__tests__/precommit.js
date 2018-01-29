@@ -22,6 +22,7 @@ cases(
     Object.assign(utils, {
       hasPkgProp,
       hasFile,
+      resolveBin: (modName, { executable = modName } = {}) => executable,
     })
     process.exit = jest.fn()
 

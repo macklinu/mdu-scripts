@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`precommit executes validate-commit-msg with no args 1`] = `validate-commit-msg`;
