@@ -1,10 +1,26 @@
+const { hasAnyDep } = require('../utils')
+
+const usingReact = hasAnyDep('react')
+
 module.exports = {
-  extends: ['eslint:recommended', 'prettier', 'prettier/react'],
-  plugins: ['jest'],
+  extends: [
+    'eslint:recommended',
+    'prettier',
+    usingReact && 'prettier/react',
+    usingReact && 'plugin:react/recommended',
+    usingReact && 'plugin:jsx-a11y/recommended',
+  ].filter(Boolean),
+  plugins: ['jest', usingReact && 'react', usingReact && 'jsx-a11y'].filter(
+    Boolean
+  ),
   parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 8,
     sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+      modules: true,
+    },
   },
   env: {
     'jest/globals': true,

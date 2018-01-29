@@ -39,6 +39,8 @@
     "eslint": "^4.15.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-jest": "^21.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.6.0",
     "execa": "^0.9.0",
     "flow-bin": "^0.64.0",
     "glob": "^7.1.2",
