@@ -1,6 +1,6 @@
 {
   "name": "mdu-scripts",
-  "description": "CLI toolbox for common scripts for my projects",
+  "description": "Toolkit for building Node and React libraries",
   "version": "0.0.0-development",
   "main": "dist/index.js",
   "bin": "dist/cli.js",
